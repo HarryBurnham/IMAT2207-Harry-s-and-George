@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         &nbsp;<div>
             <asp:Label ID="lblOrderId" runat="server" Text="Order ID" width="90px"></asp:Label>
-&nbsp;&nbsp;<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+&nbsp;&nbsp;<asp:TextBox ID="txtOrderId" runat="server" TextMode="Number"></asp:TextBox>
             <br />
             <asp:Label ID="lblOrderDate" runat="server" Text="Order Date" width="90px"></asp:Label>
 &nbsp; <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
@@ -19,7 +19,7 @@
 &nbsp;&nbsp;<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
             <br />
             <asp:Label ID="lblOrderType" runat="server" Text="Order Type" width="90px"></asp:Label>
-&nbsp; <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+&nbsp; <asp:TextBox ID="txtOrderType" runat="server"></asp:TextBox>
             <br />
             <asp:Label ID="lblCustomerId" runat="server" Text="Customer ID" width="90px"></asp:Label>
 &nbsp;&nbsp;<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
