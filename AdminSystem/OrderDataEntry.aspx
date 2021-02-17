@@ -13,16 +13,16 @@
 &nbsp;&nbsp;<asp:TextBox ID="txtOrderId" runat="server" TextMode="Number"></asp:TextBox>
             <br />
             <asp:Label ID="lblOrderDate" runat="server" Text="Order Date" width="90px"></asp:Label>
-&nbsp; <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+&nbsp; <asp:TextBox ID="txtOrderDate" runat="server" TextMode="DateTime"></asp:TextBox>
             <br />
             <asp:Label ID="lblCost" runat="server" Text="Cost" width="90px"></asp:Label>
-&nbsp;&nbsp;<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+&nbsp;&nbsp;<asp:TextBox ID="txtCost" runat="server" TextMode="Number"></asp:TextBox>
             <br />
             <asp:Label ID="lblOrderType" runat="server" Text="Order Type" width="90px"></asp:Label>
 &nbsp; <asp:TextBox ID="txtOrderType" runat="server"></asp:TextBox>
             <br />
             <asp:Label ID="lblCustomerId" runat="server" Text="Customer ID" width="90px"></asp:Label>
-&nbsp;&nbsp;<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+&nbsp;&nbsp;<asp:TextBox ID="txtCustomerId" runat="server" TextMode="Number"></asp:TextBox>
             <br />
             <br />
 &nbsp;<asp:CheckBox ID="lblDispatched" runat="server" Text="Dispatched" />

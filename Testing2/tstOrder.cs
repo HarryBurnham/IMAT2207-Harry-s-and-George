@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Testing2
 {
     [TestClass]
-    public class tstQuantity
+    public class tstOrder
     {
         [TestMethod]
         public void InstanceOK()
@@ -27,7 +27,7 @@ namespace Testing2
         public void OrderDatePropertyOK()
         {
             clsOrder AnOrder = new clsOrder();
-            string testData = "test";
+            DateTime testData = Convert.ToDateTime("16/05/2015");
             AnOrder.OrderDate = testData;
             Assert.AreEqual(AnOrder.OrderDate, testData);
         }
@@ -75,6 +75,141 @@ namespace Testing2
             int testData = 1;
             AnOrder.CustomerId = testData;
             Assert.AreEqual(AnOrder.CustomerId, testData);
+        }
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            clsOrder AnOrder = new clsOrder();
+            Boolean found = false;
+            Int32 OrderId = 2;
+            found = AnOrder.Find(OrderId);
+            Assert.IsTrue(found);
+        }
+
+        [TestMethod]
+        public void TestOrderIdNoFound()
+        {
+            clsOrder AnOrder = new clsOrder();
+            Boolean found = false;
+            Boolean OK = true;
+            Int32 OrderId = 2;
+
+            found = AnOrder.Find(OrderId);
+            if(AnOrder.OrderId!=2)
+            {
+                OK = false;
+            }
+
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestOrderDateNoFound()
+        {
+            clsOrder AnOrder = new clsOrder();
+            Boolean found = false;
+            Boolean OK = true;
+            Int32 OrderId = 2;
+
+            found = AnOrder.Find(OrderId);
+            if (AnOrder.OrderDate != Convert.ToDateTime("29/10/2000"))
+            {
+                OK = false;
+            }
+
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestQuantityNoFound()
+        {
+            clsOrder AnOrder = new clsOrder();
+            Boolean found = false;
+            Boolean OK = true;
+            Int32 OrderId = 2;
+
+            found = AnOrder.Find(OrderId);
+            if (AnOrder.Quantity != 5)
+            {
+                OK = false;
+            }
+
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestCostNoFound()
+        {
+            clsOrder AnOrder = new clsOrder();
+            Boolean found = false;
+            Boolean OK = true;
+            Int32 OrderId = 2;
+
+            found = AnOrder.Find(OrderId);
+            if (AnOrder.Cost != 3.2)
+            {
+                OK = false;
+            }
+
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestOrderTypeFound()
+        {
+            clsOrder AnOrder = new clsOrder();
+            Boolean found = false;
+            Boolean OK = true;
+            Int32 OrderId = 2;
+
+            found = AnOrder.Find(OrderId);
+            if (AnOrder.OrderType!="fast")
+            {
+                OK = false;
+            }
+
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestDispatchedFound()
+        {
+            clsOrder AnOrder = new clsOrder();
+            Boolean found = false;
+            Boolean OK = true;
+            Int32 OrderId = 2;
+
+            found = AnOrder.Find(OrderId);
+            if (AnOrder.Dispatched != true)
+            {
+                OK = false;
+            }
+
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestCustomerIdNoFound()
+        {
+            clsOrder AnOrder = new clsOrder();
+            Boolean found = false;
+            Boolean OK = true;
+            Int32 OrderId = 2;
+
+            found = AnOrder.Find(OrderId);
+            if (AnOrder.CustomerId != 3)
+            {
+                OK = false;
+            }
+
+            Assert.IsTrue(OK);
+
         }
     }
 }
