@@ -144,6 +144,7 @@ namespace ClassLibrary
             }
         }
 
+        //function for findina a customers details based on their id number 
         public bool Find(int CustomerID)
         {
 
@@ -175,6 +176,124 @@ namespace ClassLibrary
                 //return false indicating a problem
                 return false;
             }
+        }
+
+        //function for the public validation method 
+        public string Valid(string FirstName, string Surname, string Address, string PhoneNumber,string EmailAddress,string DateOfBirth,string Password) {
+
+            //create a string variable to store the error 
+            String Error = "";
+            //Create a temporary value to store date values
+            DateTime DateTemp;
+
+            //if the FirstName is blank 
+            if (FirstName.Length == 0)
+            {
+                //record the error 
+                Error = Error + "The FirstName may not be blank : ";
+            }
+
+            //if the FirstName is greater than 10 characters
+            if (FirstName.Length > 10)
+            {
+                //record the error 
+                Error = Error + "The FirstName must be less than 10 characters : ";
+            }
+
+            //if the Surname is blank 
+            if (Surname.Length == 0)
+            {
+                //record the error 
+                Error = Error + "The Surname may not be blank : ";
+            }
+
+            //if the Surname is greater than 10 characters
+            if (Surname.Length > 10)
+            {
+                //record the error 
+                Error = Error + "The surname must be less than 10 characters : ";
+            }
+
+            //if the Address is blank
+            if (Address.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Address may not be blank : ";
+            }
+
+            //if the Address is greater than 50 characters
+            if (Address.Length > 50)
+            {
+                //record the error
+                Error = Error + "The Address must be less than 50 characters : ";
+            }
+
+            //if the PhoneNumber is blank
+            if (PhoneNumber.Length == 0)
+            {
+                //record the error
+                Error = Error + "The phone number may not be blank : ";
+            }
+
+            //if the phone number is greater than 11 characters
+            if (PhoneNumber.Length > 11)
+            {
+                //record the error
+                Error = Error + "The Phone number must be less than 11 characters : ";
+            }
+
+            //if the EmailAddress is blank
+            if (EmailAddress.Length == 0)
+            {
+                //record the error
+                Error = Error + "The EmailAddress may not be blank : ";
+            }
+
+            //if the EmailAddress is greater than 40 characters
+            if (EmailAddress.Length > 40)
+            {
+                //record the error
+                Error = Error + "The EmailAddress must be less than 40 characters : ";
+            }
+
+            try
+            {
+                //copy the DateOfBirth value to the DataTemp variable
+                DateTemp = Convert.ToDateTime(DateOfBirth);
+                if (DateTemp < Convert.ToDateTime("01/01/1900"))
+                {
+                    //record the Error
+                    Error = Error + "The DateOfBirth cannot be that far in the past : ";
+                }
+
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record the Error
+                    Error = Error + "The DateOfBirth cannot be in the future : ";
+                }
+            }
+            catch
+            {
+                //record the error 
+                Error = Error + "The date was not a valid date : ";
+            }
+
+            //if the Password is blank
+            if (Password.Length == 0)
+            {
+                //record the error
+                Error = Error + "The password may not be blank : ";
+            }
+
+            //if the Password is greater than 50 characters
+            if (Password.Length > 50)
+            {
+                //record the error
+                Error = Error + "The password must be less than 50 characters : ";
+            }
+
+            //return any error messages 
+            return Error;
         }
     }
 }
